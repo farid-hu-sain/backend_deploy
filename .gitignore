@@ -2,5 +2,4 @@ node_modules
 .env.production
 .env.devlopment
 dist
-/src/generated/
 public/uploads/*
