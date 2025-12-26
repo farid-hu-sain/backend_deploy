@@ -1,0 +1,17 @@
+model User {
+    id                  Int             @id @default(autoincrement())
+    username            String          @unique @default("")
+    email               String          @unique
+    password_hash       String          
+    role                String          @default("USER")
+
+    createdAt  DateTime     @default(now())
+    updatedAt  DateTime     @updatedAt
+    deletedAt  DateTime?
+
+    profile Profile[]
+    orders Order[]
+    
+
+    @@map("users")
+}
