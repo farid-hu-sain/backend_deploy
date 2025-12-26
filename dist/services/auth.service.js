@@ -1,0 +1,44 @@
+import prisma from "../database.js";
+import config from "../utils/env.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
+export const register = async (data) => {
+    const existingUser = await prisma.user.findUnique({ where: { email: data.email } });
+    if (existingUser) {
+        throw new Error("Email sudah terdaftar");
+    }
+    const hashedPassword = await bcrypt.hash(data.password, 10);
+    const user = await prisma.user.create({
+        data: {
+            email: data.email,
+            username: data.username,
+            password_hash: hashedPassword,
+            role: data.role || "USER"
+        },
+    });
+    return {
+        email: user.email,
+        username: user.username,
+        role: user.role
+    };
+};
+export const login = async (data) => {
+    const user = await prisma.user.findUnique({
+        where: { email: data.email }
+    });
+    if (!user) {
+        throw new Error("Email atau password salah");
+    }
+    const isValid = await bcrypt.compare(data.password, user.password_hash);
+    if (!isValid) {
+        throw new Error("Email atau password salah");
+    }
+    const token = jwt.sign({ id: user.id, role: user.role }, config.JWT_SECRET, { expiresIn: "1h" });
+    const userReturn = {
+        email: user.email,
+        username: user.username,
+        role: user.role
+    };
+    return { userReturn, token };
+};
+//# sourceMappingURL=auth.service.js.map

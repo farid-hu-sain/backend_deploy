@@ -1,4 +1,4 @@
-import type { Prisma, Profile} from "../generated/client"
+import type { Prisma, Profile} from "../generated"
 import type { IProfileRepository } from "../repository/profile.repository"
 
 interface FindAllParams {

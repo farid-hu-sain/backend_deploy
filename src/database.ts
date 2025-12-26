@@ -1,6 +1,6 @@
 import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
-import { PrismaClient } from "./generated/client";
+import { PrismaClient } from "./generated";
 import config from './utils/env'
 
 let prisma: PrismaClient

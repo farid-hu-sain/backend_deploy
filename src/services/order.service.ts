@@ -1,4 +1,4 @@
-import type { Prisma, Order} from "../generated/client"
+import type { Prisma, Order} from "../generated"
 import type { IOrderRepository } from "../repository/order.repository"
 import prisma from "../database";
 

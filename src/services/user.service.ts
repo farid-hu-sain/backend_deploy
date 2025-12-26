@@ -1,4 +1,4 @@
-import type { Prisma, User} from "../generated/client"
+import type { Prisma, User} from "../generated"
 import type { IUserRepository } from "../repository/user.repository"
 
 interface FindAllParams {
