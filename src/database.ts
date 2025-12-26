@@ -1,4 +1,4 @@
-import { PrismaPg } from "../node_modules/@prisma/adapter-pg/dist/index";
+import { PrismaPg } from "@prisma/adapter-pg";
 import { Pool } from "pg";
 import { PrismaClient } from "./generated/client";
 import config from './utils/env'

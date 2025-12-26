@@ -4,7 +4,7 @@ import { validate } from "../utils/validator";
 import { createCategoryValidation, getCategoryByIdValidation } from "../middlewares/category.validation";
 import { CategoryRepository } from "../repository/category.repository";
 import { CategoryService } from "../services/category.service";
-import prismaIntance from "../prisma";
+import prismaIntance from "../database";
 
 const repo = new CategoryRepository(prismaIntance)
 const service = new CategoryService(repo)

@@ -4,7 +4,7 @@ import { validate } from "../utils/validator";
 import { createOrderValidation, getOrderByIdValidation } from "../middlewares/order.validation";
 import { OrderRepository } from "../repository/order.repository";
 import { OrderService } from "../services/order.service";
-import prismaIntance from "../prisma";
+import prismaIntance from "../database";
 
 const repo = new OrderRepository(prismaIntance)
 const service = new OrderService(repo)

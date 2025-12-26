@@ -1,5 +1,5 @@
 import type {  Prisma, PrismaClient, OrderItems } from "../generated/client";
-import type { Decimal } from "../generated/internal/prismaNamespace";
+import type { Decimal } from "../generated/runtime/client";
 
 export interface IOrderItemsRepository {
     list(

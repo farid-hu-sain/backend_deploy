@@ -6,7 +6,7 @@ import { validate } from "../utils/validator";
 import { authenticate } from "../middlewares/auth.middleware";
 import { upload } from "../middlewares/upload.middleware";
 import { ProductRepository } from "../repository/product.repository";
-import prismaIntance from "../prisma";
+import prismaIntance from "../database";
 import { ProductService } from "../services/product.service";
 
 

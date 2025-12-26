@@ -1,4 +1,4 @@
-import prisma from "../prisma";
+import prisma from "../database";
 import config from '../utils/env'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken';

@@ -6,7 +6,7 @@ import { validate } from "../utils/validator";
 import { authenticate } from "../middlewares/auth.middleware";
 import { upload } from "../middlewares/upload.middleware";
 import { ProfileRepository } from "../repository/profile.repository";
-import prismaIntance from "../prisma";
+import prismaIntance from "../database";
 import { ProfileService } from "../services/profile.service";
 
 

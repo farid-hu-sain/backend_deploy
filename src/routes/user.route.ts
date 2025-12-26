@@ -4,7 +4,7 @@ import { validate } from "../utils/validator";
 import { createUserValidation, getUserByIdValidation } from "../middlewares/user.validation";
 import { UserRepository } from "../repository/user.repository";
 import { UserService } from "../services/user.service";
-import prismaIntance from "../prisma";
+import prismaIntance from "../database";
 
 const repo = new UserRepository(prismaIntance)
 const service = new UserService(repo)
